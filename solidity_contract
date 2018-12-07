@@ -31,4 +31,14 @@ contract LifeAssure {
         cashOut[_wallet] = _cashOut;
     }
     
+    function payOut() private mustBreach {
+        for (uint i=0; i<wallet.length; i++) {
+            wallet[i].transfer(cashOut[wallet[i]]);
+        }
+    }
+    
+    function breach() public onlyOwner {
+        limitBreach = true;
+        payOut();
+    }
 }
