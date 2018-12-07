@@ -1,11 +1,34 @@
-pragma solidity >=0.4.22 <0.6.0
-contract Life_Assure {
+pragma solidity ^0.4.24;
+
+contract LifeAssure {
     
-    struct Client Contributions {
-        uint Cash Wallet A;
+    address owner;
+    uint savings;
+    bool limitBreach;
+    
+    constructor() public payable {
+        owner = msg.sender;
+        savings = msg.value;
+        limitBreach = false;
     }
-    struct Client Savings {
-        uint Cash Wallet B;
+    
+    modifier onlyOwner {
+        require (msg.sender == owner);
+        _;
+    }
+    
+    modifier mustBreach {
+        require (limitBreach == true);
+        _;
+    }
+    
+    address[] wallet;
+    
+    mapping (address => uint) cashOut;
+    
+    function setCashOut(address _wallet, uint _cashOut) public onlyOwner {
+        wallet.push(_wallet);
+        cashOut[_wallet] = _cashOut;
     }
     
 }
