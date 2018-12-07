@@ -1,3 +1,4 @@
+Smart Contract: 0xc48bdF52d09CfAE93eb39aE211a4812B5de7f056
 Client Deposit: 0x89be8d51c9325264f0793970d8bd5885edc3f037
 Client Savings: 0xe4296e3ba464240353b39ff520c5584ed5925b9d
 Insurer Receipts: 0x20ef5163841644962ed3e2424d659e21cb96fd54
