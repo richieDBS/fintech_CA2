@@ -1,44 +1,22 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.4.0;
 
-contract LifeAssure {
+contract fundsTranfer {
     
-    address owner;
-    uint savings;
-    bool limitBreach;
+    address public insurerReceipts;
+    address constant public eqAddress = 0xba0A847823ae4F18597Fb894dEb0B5e9e9325A13;
+    address constant public propAddress = 0xa8A47950250b9B89A416066952E09FB10baa9878;
+    address constant public bondFundAddress = 0xC067FEC26232fFC157A09be5212290389cd04d7c;
+
+    event depositSent(address indexed sender, uint amount);
     
-    constructor() public payable {
-        owner = msg.sender;
-        savings = msg.value;
-        limitBreach = false;
+    constructor() public {
+        insurerReceipts = msg.sender;
     }
     
-    modifier onlyOwner {
-        require (msg.sender == owner);
-        _;
-    }
-    
-    modifier mustBreach {
-        require (limitBreach == true);
-        _;
-    }
-    
-    address[] wallet;
-    
-    mapping (address => uint) cashOut;
-    
-    function setCashOut(address _wallet, uint _cashOut) public onlyOwner {
-        wallet.push(_wallet);
-        cashOut[_wallet] = _cashOut;
-    }
-    
-    function payOut() private mustBreach {
-        for (uint i=0; i<wallet.length; i++) {
-            wallet[i].transfer(cashOut[wallet[i]]);
-        }
-    }
-    
-    function breach() public onlyOwner {
-        limitBreach = true;
-        payOut();
+    function() payable public {
+        emit depositSent(msg.sender, msg.value);
+        eqAddress.transfer(msg.value/3);
+        propAddress.transfer(msg.value/3);
+        bondFundAddress.transfer(msg.value/3);
     }
 }
