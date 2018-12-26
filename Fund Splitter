@@ -1,0 +1,22 @@
+pragma solidity ^0.4.24;
+
+contract fundsTranfer {
+    
+    address public insurerReceipts;
+    address constant public eqAddress = 0xba0A847823ae4F18597Fb894dEb0B5e9e9325A13;
+    address constant public propAddress = 0xa8A47950250b9B89A416066952E09FB10baa9878;
+    address constant public bondAddress = 0xC067FEC26232fFC157A09be5212290389cd04d7c;
+
+    event depositSent(address indexed sender, uint amount);
+    
+    constructor() public {
+        insurerReceipts = msg.sender;
+    }
+    
+    function() payable public {
+        emit depositSent(msg.sender, msg.value);
+        eqAddress.transfer(msg.value/3);
+        propAddress.transfer(msg.value/3);
+        bondAddress.transfer(msg.value/3);
+    }
+}
