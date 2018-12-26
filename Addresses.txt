@@ -1,7 +1,14 @@
-Smart Contract: 0xc48bdF52d09CfAE93eb39aE211a4812B5de7f056
-Client Deposit: 0x89be8d51c9325264f0793970d8bd5885edc3f037
-Client Savings: 0xe4296e3ba464240353b39ff520c5584ed5925b9d
-Insurer Receipts: 0x20ef5163841644962ed3e2424d659e21cb96fd54
-Equity Fund: 0xba0a847823ae4f18597fb894deb0b5e9e9325a13
-Property Fund: 0xa8a47950250b9b89a416066952e09fb10baa9878
-Bonds Fund: 0xc067fec26232ffc157a09be5212290389cd04d7c
+Client Savings:   0x89be8d51c9325264f0793970d8bd5885edc3f037
+Insurer Receipts: 0x58336a7FB99735F4effE4B0DC0483D46Ca69bC54
+Equity Fund:      0x53d28df7c0c23e337BaBe1803062FD94E0619DF8
+Property Fund:    0x3e797421474cAfa2d9C938BFB8cB2538D657e41D
+Bonds Fund:       0x13C821Df91F36DA811209329Eba759396bF0c45b
+Insurer Reserves: 0xCd4d5feF2773516B9bd54fa0510130126dFFC76E
+
+Smart Contracts:
+Fund-Splitter Contract:
+EQUITY Token Transfer Contract:
+PROPERTY Token Transfer Contract:
+BONDS Token Transfer Contract:
+College Save (CSV) ICO Constract:
+CSV Profit & Loss Contract: 
